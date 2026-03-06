@@ -14,8 +14,8 @@
 #  See STIR/LICENSE.txt for details
 
 # adjust location of SimSET to where you have it installed.
-SIMSET_DIR=~/simset/2.9.1
-export SIMSET_DIR
+# SIMSET_DIR=~/simset/2.9.1
+# export SIMSET_DIR
 
 #All STIR utilities/scripts have to be in your path, e.g. if your 
 #INSTALL_PREFIX was ~/STIR-bin, you could do
@@ -28,7 +28,7 @@ generate_image generate_uniform_cylinder.par
 stir_math --including-first --times-scalar 0.096 uniform_cylinder_atten.hv my_uniform_cylinder.hv
 
 # give the simulation a name. All output files will go into a new subdirectory of this name
-SIM_NAME=sim3
+SIM_NAME=sim4
 # number of decays to simulate
 PHOTONS=5000000
 # specify names/locations of input files
@@ -39,7 +39,7 @@ TEMPLATE_PHG=${templ_dir}/template_phg.rec
 TEMPLATE_BIN=${templ_dir}/template_bin.rec
 TEMPLATE_DET=${templ_dir}/template_det.rec
 # specify scanner
-SCANNER="ECAT HR+"
+SCANNER="Siemens Quadra"
 # maximum ring difference to store in conversion from SimSET to Interfile projdata
 NUM_SEG=31
 # export all variables
