@@ -15,6 +15,7 @@
 
 # adjust location of SimSET to where you have it installed.
 SIMSET_DIR=~/simset/2.9.1
+SIMSET_DIR=/homes/hinge/Projects/simset/2.9.2
 export SIMSET_DIR
 
 #All STIR utilities/scripts have to be in your path, e.g. if your 
@@ -30,7 +31,7 @@ stir_math --including-first --times-scalar 0.096 uniform_cylinder_atten.hv my_un
 # give the simulation a name. All output files will go into a new subdirectory of this name
 SIM_NAME=sim3
 # number of decays to simulate
-PHOTONS=5000000
+PHOTONS=50000000
 # specify names/locations of input files
 EMISS_DATA=my_uniform_cylinder.hv
 ATTEN_DATA=uniform_cylinder_atten.hv
