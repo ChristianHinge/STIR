@@ -197,7 +197,16 @@ def write_detparams(
         fi_str = "true" if do_forced_interaction else "false"
         f.write(f"BOOL\tdo_forced_interaction = {fi_str}\n\n")
         f.write(f"REAL\treference_energy_keV\t\t= {scanner.get_reference_energy():.1f}\n")
-        f.write(f"REAL\tenergy_resolution_percentage\t= {scanner.get_energy_resolution() * 100:.1f}\n\n")
+        energy_res = scanner.get_energy_resolution()
+        if energy_res <= 0:
+            # BGO default; warn the user
+            import warnings
+            warnings.warn(
+                f"{scanner.get_name()}: STIR energy_resolution is 0 (unknown). "
+                "Defaulting to 0.20 (20%) for BGO. Override PhysicalSpec if needed."
+            )
+            energy_res = 0.20
+        f.write(f"REAL\tenergy_resolution_percentage\t= {energy_res * 100:.1f}\n\n")
         f.write("ENUM\tblocktomo_position_algorithm = snap_centroid_to_crystal_center\n\n")
         f.write(f"NUM_ELEMENTS_IN_LIST\tblocktomo_num_rings = {num_axial_rings}\n\n")
 

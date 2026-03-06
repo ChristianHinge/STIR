@@ -22,9 +22,9 @@ def convert(
 
     os.makedirs(outdir, exist_ok=True)
 
-    bloc_path = os.path.join(outdir, f"det_block.params")
-    ring_path = os.path.join(outdir, f"det_ring.params")
-    det_path  = os.path.join(outdir, f"det_detector.params")
+    bloc_path = os.path.join(outdir, f"block.rec")
+    ring_path = os.path.join(outdir, f"ring.rec")
+    det_path  = os.path.join(outdir, f"det.rec")
 
     write_blocparams(bloc_path, scanner, phys, phys_trans, phys_axial)
     write_ringparams(ring_path, bloc_path, scanner, phys, num_trans_blocks, phys_axial)

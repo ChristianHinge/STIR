@@ -32,14 +32,13 @@ INT		random_seed		= 0
 BOOL	model_coherent_scatter		= false
 ENUM isotope = f18
 
-
 # TARGET CYLINDER INFORMATION
 # HR+ length is 15.52 with 32 rings
 # Currently, z_Min has to start at -(ring_spacing)/2
 NUM_ELEMENTS_IN_LIST    target_cylinder = 3
 	REAL	target_zMin =  -0.2425
 	REAL	target_zMax = 15.035
-	REAL	radius =      41.25
+	REAL	radius =      41.1
 
 
 # COHERENT ANGULAR DISTRIBUTION FILES

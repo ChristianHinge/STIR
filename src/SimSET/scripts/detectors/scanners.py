@@ -246,3 +246,29 @@ _register("Siemens Quadra", PhysicalSpec(
     phys_trans_crystals_per_block=20,
     phys_axial_crystals_per_block=10,
 ))
+
+
+# ===========================================================================
+# Siemens ECAT EXACT HR+ (ECAT 962)
+# ===========================================================================
+# Physical spec: "Performance evaluation of the whole-body PET scanner
+# ECAT EXACT HR+", OSTI report 513192, 1996.
+# Crystal: BGO, 4.05 (axial) × 4.39 (transaxial) × 30 mm (depth).
+# 8×8 physical crystals per block; no virtual crystals.
+# Axial crystal pitch = 4.85 mm (= STIR ring_spacing); physical crystal
+# axial face is 4.05 mm, leaving ~0.8 mm for reflector/dead material.
+# Note: "ECAT HR+" is a STIR alias; canonical name is "ECAT 962".
+_register("ECAT 962", PhysicalSpec(
+    crystal_depth_mm=30.0,
+    crystal_trans_size_mm=4.492,
+    crystal_axial_size_mm=4.85,        # centre-to-centre pitch = STIR ring_spacing
+    wrap_thickness_mm=0.04,
+    housing_front_mm=1.0,
+    housing_back_mm=1.0,
+    side_housing_mm=0.0,
+    crystal_material=SIMSET_MATERIALS["BGO"],
+    housing_material=SIMSET_MATERIALS["aluminum"],
+    wrap_material=SIMSET_MATERIALS["air"],
+    phys_trans_crystals_per_block=8,
+    phys_axial_crystals_per_block=8,
+))

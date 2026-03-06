@@ -135,6 +135,14 @@ if [ ${DIR_INPUT} != ${DIR_OUTPUT} -o ${TEMPLATE_DET} != det.rec ]; then
   cp ${TEMPLATE_DET} ${DIR_OUTPUT}/det.rec
 fi
 
+# Optionally copy block and ring detector parameter files 
+if [[ -n "${TEMPLATE_BLOC}" ]] && [[ "${DIR_INPUT}" != "${DIR_OUTPUT}" || "${TEMPLATE_BLOC}" != "block.rec" ]]; then
+  cp ${TEMPLATE_BLOC} ${DIR_OUTPUT}/block.rec
+fi
+if [[ -n "${TEMPLATE_RING}" ]] && [[ "${DIR_INPUT}" != "${DIR_OUTPUT}" || "${TEMPLATE_RING}" != "ring.rec" ]]; then
+  cp ${TEMPLATE_RING} ${DIR_OUTPUT}/ring.rec
+fi
+
 cd ${DIR_OUTPUT}
 # first convert input emission to 1byte data
 cat > output_format_1byte.par  <<EOF
